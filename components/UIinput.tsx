@@ -7,7 +7,7 @@ type Props = {
 export default function UIinput(props: Props) {
 
     return (
-        <input {...props} className='text-black py-3 px-2 font-semibold rounded-md h-10 transition border border-solid bg-white z-10'>
+        <input {...props} className='text-background py-3 px-2 font-semibold rounded-md h-14 transition bg-text z-10 placeholder:text-background'>
         </input>
     )
 }

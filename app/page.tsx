@@ -15,12 +15,12 @@ export default function Home() {
             width={96}
             height={96}
           />
-          <div className="text-violet-200 font-bold text-lg ml-2">Развитие</div>
+          <div className="text-text font-bold text-lg ml-2">Развитие</div>
 
           <div className="space-x-8">
-            <a href="#" className="text-violet-200">Репетиторам</a>
-            <a href="#" className="text-violet-200">Обучающимся</a>
-            <a href="#" className="text-violet-200">Предметы</a>
+            <a href="#" className="text-text">Репетиторам</a>
+            <a href="#" className="text-text">Обучающимся</a>
+            <a href="#" className="text-text">Предметы</a>
           </div>
 
           <div className="space-x-8">
@@ -68,7 +68,7 @@ export default function Home() {
             <div className="w-full flex justify-center pt-5">
               <div className="text-text grid grid-cols-4 gap-4 w-3/4 z-50">
                 <div className="col-span-1 px-6 space-y-2">
-                  <p className="col-span-1 space-y-2 text-tex text-lg pb-3">Школьная программа</p>
+                  <p className="col-span-1 space-y-2 text-primary text-lg pb-3">Школьная программа</p>
                   <p>Русский язык</p>
                   <p>Математика</p>
                   <p>Английский</p>
@@ -77,7 +77,7 @@ export default function Home() {
                   <p>Биология</p>
                 </div>
                 <div className="col-span-1 px-6 space-y-2">
-                  <p className="col-span-1 space-y-2 text-text text-lg pb-3">ОГЭ</p>
+                  <p className="col-span-1 space-y-2 text-primary text-lg pb-3">ОГЭ</p>
                   <p>Русский язык</p>
                   <p>Математика</p>
                   <p>Физика</p>
@@ -86,7 +86,7 @@ export default function Home() {
                   <p>Литература</p>
                 </div>
                 <div className="col-span-1 px-6 space-y-2">
-                  <p className="col-span-1 space-y-2 text-text text-lg pb-3">ЕГЭ</p>
+                  <p className="col-span-1 space-y-2 text-primary text-lg pb-3">ЕГЭ</p>
                   <p>Русский язык</p>
                   <p>Математика</p>
                   <p>Проф. Математика</p>
@@ -95,7 +95,7 @@ export default function Home() {
                   <p>Информатика</p>
                 </div>
                 <div className="col-span-1 px-6 space-y-2">
-                  <p className="col-span-1 space-y-2 text-text text-lg pb-3">Хобби</p>
+                  <p className="col-span-1 space-y-2 text-primary text-lg pb-3">Хобби</p>
                   <p>Вокал</p>
                   <p>Программирование</p>
                   <p>Дизайн</p>
