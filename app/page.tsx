@@ -24,7 +24,7 @@ export default function Home() {
           </div>
 
           <div className="space-x-8">
-            <Link href="#" className="text-black font-bold text-xs bg-primary border-white rounded-3xl py-3 px-6">Зарегистрироваться</Link>
+            <Link href="/Reg" className="text-black font-bold text-xs bg-primary border-white rounded-3xl py-3 px-6">Зарегистрироваться</Link>
             <Link href="/Auth" className="text-text">Войти</Link>
           </div>
 
@@ -52,7 +52,7 @@ export default function Home() {
           <div className='w-1/3 z-50 flex items-center flex-col py-40'>
             <p className='text-5xl text-background font-bold mb-10'>Всё в одном месте:</p>
             <p className='text-2xl text-background  text-center'>Интернет-ресурс "Развитие" собрал в себе все необходимые функции для репетиторского центра от поиска эксперта и ученика до чатов с ним</p>
-            <a href="#" className="text-text font-bold text-base bg-background  border-white rounded-full py-6 px-10 mt-16">Зарегистрироваться</a>
+            <Link href="/Reg" className="text-text font-bold text-base bg-background  border-white rounded-full py-6 px-10 mt-16">Зарегистрироваться</Link>
           </div>
 
         </div>
@@ -107,7 +107,7 @@ export default function Home() {
             </div>
 
             <p className='text-lg text-text font-bold pb-4 pt-28'>И ещё много других предметов</p>
-            <a href="#" className="text-black font-bold text-base bg-primary border-white rounded-full py-6 px-10 mt-16">Зарегистрироваться</a>
+            <Link href="/Reg" className="text-black font-bold text-base bg-primary border-white rounded-full py-6 px-10 mt-16">Зарегистрироваться</Link>
 
           </div>
 
