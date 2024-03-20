@@ -15,17 +15,15 @@ export default function Home() {
                         width={96}
                         height={96}
                     />
-                    <div className="text-text font-bold text-lg ml-2">Развитие</div>
+                    <Link href="/" className="text-text font-bold text-lg ml-2">Развитие</Link>
 
                     <div className="space-x-8">
-                        <a href="#" className="text-text">Репетиторам</a>
-                        <a href="#" className="text-text">Обучающимся</a>
-                        <a href="#" className="text-text">Предметы</a>
-                        <a href="#" className="text-text">Обо мне</a>
+                        <Link href="#" className="text-text">Репетиторам</Link>
+                        <Link href="#" className="text-text">Обучающимся</Link>
+                        <Link href="/Me" className="text-text">Обо мне</Link>
                     </div>
 
                     <div className="space-x-8">
-                        <Link href="/Reg" className="text-black font-bold text-xs bg-primary border-white rounded-3xl py-3 px-6">Зарегистрироваться</Link>
                         <Link href="/" className="text-text">Выйти</Link>
                     </div>
 
@@ -64,7 +62,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <div className='w-2/3 h-auto z-50 justify-between flex rounded-3xl mt-10'>
@@ -76,27 +74,91 @@ export default function Home() {
                         </div>
 
                         <div className='w-full h-full z-50 rounded-3xl flex flex-col justify-between space-y-6'>
-                            <div className='w-full h-64 z-50 rounded-3xl bg-text flex flex-row justify-between'>
 
-                            </div>
-                            <div className='w-full h-64 z-50 rounded-3xl bg-text flex flex-row justify-between'>
+                            <Link href="/Me" className='w-full h-auto z-50 rounded-3xl bg-text flex flex-row justify-between p-5'>
+                                <div className='w-3/12 h-full z-50 rounded-3xl'>
+                                    <Image className='z-0'
+                                        src="/Logo.png"
+                                        alt="Vercel Logo"
+                                        width={220}
+                                        height={220}
+                                    />
+                                </div>
+                                <div className='w-8/12 h-full z-50 rounded-3xl'>
+                                    <p className='text-lg text-secondary font-bold pb-3'>Хорошев Сергей Сергеевич</p>
+                                    <p className='text-base text-background font-bold pb-2'>Местоположение: Новокузнецк, Запсиб</p>
+                                    <p className='text-base text-background font-bold pb-2'>Возвраст: 31 Опыт:без опыта Цена услуги:от 500 руб/45 минут</p>
+                                    <p className='text-base text-background font-bold pb-2'>О себе: 5 лет работаю в школе учителем географии, помогу со сдачей экзамена. Также помогу понять сложные темы.</p>
+                                </div>
+                            </Link>
 
-                            </div>
-                            <div className='w-full h-64 z-50 rounded-3xl bg-text flex flex-row justify-between'>
+                            <Link href="/" className='w-full h-auto z-50 rounded-3xl bg-text flex flex-row justify-between p-5'>
+                                <div className='w-3/12 h-full z-50 rounded-3xl'>
+                                    <Image className='z-0'
+                                        src="/Logo.png"
+                                        alt="Vercel Logo"
+                                        width={220}
+                                        height={220}
+                                    />
+                                </div>
+                                <div className='w-8/12 h-full z-50 rounded-3xl'>
+                                    <p className='text-lg text-secondary font-bold pb-3'>Сычко Давид Никитович</p>
+                                    <p className='text-base text-background font-bold pb-2'>Местоположение: Новокузнецк, Запсиб</p>
+                                    <p className='text-base text-background font-bold pb-2'>Возвраст: 31 Опыт: 9 лет Цена услуги:от 700 руб/45 минут</p>
+                                    <p className='text-base text-background font-bold pb-2'>О себе: Подробно все объясню на русском, отвечу на все вопросы. Обучение станет легким и приятным. Работал в общеобразовательной школе. В дальнейшем перешел в частное образовательное учреждение, что позволило разработать собственные методики преподавания, и в полной мере реализовать творческий потенциал. Во время обучения никогда не бегу вперед, материал будет прорабатываться до тех пор, пока учащийся максимально не усвоит его. Все упражнения беру не из интернета и учебников, а составляю сам, на основании уровня знаний и возможностей учащегося. Стараюсь максимально подробно отметить на любые вопросы, не буду грузить вас сложной терминологией. Особый упор делаю на грамматику и правильность составления предложений. Для занятий не нужны никакие дорогостоящие учебники, необходимы только ручка и бумага. Общий опыт работы в обучении иностранным языкам — около 9-ти лет.</p>
+                                </div>
+                            </Link>
 
-                            </div>
-                            <div className='w-full h-64 z-50 rounded-3xl bg-text flex flex-row justify-between'>
+                            <Link href="/" className='w-full h-auto z-50 rounded-3xl bg-text flex flex-row justify-between p-5'>
+                                <div className='w-3/12 h-full z-50 rounded-3xl'>
+                                    <Image className='z-0'
+                                        src="/Logo.png"
+                                        alt="Vercel Logo"
+                                        width={220}
+                                        height={220}
+                                    />
+                                </div>
+                                <div className='w-8/12 h-full z-50 rounded-3xl'>
+                                    <p className='text-lg text-secondary font-bold pb-3'>Хорошев Сергей Сергеевич</p>
+                                    <p className='text-base text-background font-bold pb-2'>Местоположение: Новокузнецк, Запсиб</p>
+                                    <p className='text-base text-background font-bold pb-2'>Возвраст: 31 Опыт:без опыта Цена услуги:от 500 руб/45 минут</p>
+                                    <p className='text-base text-background font-bold pb-2'>О себе: 5 лет работаю в школе учителем географии, помогу со сдачей экзамена. Также помогу понять сложные темы.</p>
+                                </div>
+                            </Link>
 
-                            </div>
-                            <div className='w-full h-64 z-50 rounded-3xl bg-text flex flex-row justify-between'>
+                            <Link href="/" className='w-full h-auto z-50 rounded-3xl bg-text flex flex-row justify-between p-5'>
+                                <div className='w-3/12 h-full z-50 rounded-3xl'>
+                                    <Image className='z-0'
+                                        src="/Logo.png"
+                                        alt="Vercel Logo"
+                                        width={220}
+                                        height={220}
+                                    />
+                                </div>
+                                <div className='w-8/12 h-full z-50 rounded-3xl'>
+                                    <p className='text-lg text-secondary font-bold pb-3'>Хорошев Сергей Сергеевич</p>
+                                    <p className='text-base text-background font-bold pb-2'>Местоположение: Новокузнецк, Запсиб</p>
+                                    <p className='text-base text-background font-bold pb-2'>Возвраст: 31 Опыт:без опыта Цена услуги:от 500 руб/45 минут</p>
+                                    <p className='text-base text-background font-bold pb-2'>О себе: 5 лет работаю в школе учителем географии, помогу со сдачей экзамена. Также помогу понять сложные темы.</p>
+                                </div>
+                            </Link>
 
-                            </div>
-                            <div className='w-full h-64 z-50 rounded-3xl bg-text flex flex-row justify-between'>
-
-                            </div>
-                            <div className='w-full h-64 z-50 rounded-3xl bg-text flex flex-row justify-between'>
-
-                            </div>
+                            <Link href="/" className='w-full h-auto z-50 rounded-3xl bg-text flex flex-row justify-between p-5'>
+                                <div className='w-3/12 h-full z-50 rounded-3xl'>
+                                    <Image className='z-0'
+                                        src="/Logo.png"
+                                        alt="Vercel Logo"
+                                        width={220}
+                                        height={220}
+                                    />
+                                </div>
+                                <div className='w-8/12 h-full z-50 rounded-3xl'>
+                                    <p className='text-lg text-secondary font-bold pb-3'>Хорошев Сергей Сергеевич</p>
+                                    <p className='text-base text-background font-bold pb-2'>Местоположение: Новокузнецк, Запсиб</p>
+                                    <p className='text-base text-background font-bold pb-2'>Возвраст: 31 Опыт:без опыта Цена услуги:от 500 руб/45 минут</p>
+                                    <p className='text-base text-background font-bold pb-2'>О себе: 5 лет работаю в школе учителем географии, помогу со сдачей экзамена. Также помогу понять сложные темы.</p>
+                                </div>
+                            </Link>
                         </div>
 
                     </div>
