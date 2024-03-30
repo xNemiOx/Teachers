@@ -163,8 +163,105 @@ export default function Home() {
 
                     </div>
 
-                    <div className='w-3/12 h-screen z-50 flex items-center flex-col justify-center bg-Liteprimary rounded-3xl'>
-
+                    <div className='w-3/12 h-1/2 flex flex-col bg-Liteprimary rounded-3xl p-5'>
+                        <label className=" mb-2 text-lg font-bold text-text">Город</label>
+                        <select className="bg-gray-50 border border-gray-300 text-base rounded-lg w-full p-2.5 dark:bg-text dark:border-gray-600 dark:placeholder-gray-400 dark:text-Liteprimary">
+                            <option>Москва</option>
+                            <option>Санкт-Петербург</option>
+                            <option>Новокузнецк</option>
+                            <option>Новосибирск</option>
+                            <option>Калтан</option>
+                            <option>Томск</option>
+                        </select>
+                        <label className=" mb-2 text-lg font-bold text-text">Предмет</label>
+                        <select className="bg-gray-50 border border-gray-300 text-base rounded-lg w-full p-2.5 dark:bg-text dark:border-gray-600 dark:placeholder-gray-400 dark:text-Liteprimary">
+                            <option>Русский язык</option>
+                            <option>Математика</option>
+                            <option>Информатика</option>
+                            <option>Английский язык</option>
+                            <option>Литература</option>
+                            <option>Химия</option>
+                            <option>Биология</option>
+                            <option>Шахматы</option>
+                            <option>Проф. Математика</option>
+                            <option>Физика</option>
+                            <option>Вокал</option>
+                            <option>Программирование</option>
+                            <option>Маркетинг и продвижение</option>
+                            <option>Ремонт и строительство</option>
+                            <option>Дизайн</option>
+                            <option>Психология</option>
+                        </select>
+                        <label className=" mb-2 text-lg font-bold text-text">Для кого</label>
+                        <select className="bg-gray-50 border border-gray-300 text-base rounded-lg w-full p-2.5 dark:bg-text dark:border-gray-600 dark:placeholder-gray-400 dark:text-Liteprimary">
+                            <option>Дошкольники</option>
+                            <option>1-4 классы</option>
+                            <option>5-9 классы</option>
+                            <option>10-11 классы</option>
+                            <option>Подготовка к ОГЭ</option>
+                            <option>Подготовка к ЕГЭ</option>
+                            <option>Студенты и взрослые</option>
+                        </select>
+                        <label className="mt-6 mb-2 text-lg font-bold text-text">Зарплата за 45 минут</label>
+                        <label className=" mb-2 text-lg font-bold text-text">От</label>
+                        <select className="bg-gray-50 border border-gray-300 text-base rounded-lg w-full p-2.5 dark:bg-text dark:border-gray-600 dark:placeholder-gray-400 dark:text-Liteprimary">
+                            <option>100</option>
+                            <option>200</option>
+                            <option>300</option>
+                            <option>400</option>
+                            <option>500</option>
+                            <option>600</option>
+                            <option>700</option>
+                            <option>800</option>
+                            <option>900</option>
+                            <option>1000</option>
+                        </select>
+                        <label className=" mb-2 text-lg font-bold text-text">До</label>
+                        <select className="bg-gray-50 border border-gray-300 text-base rounded-lg w-full p-2.5 dark:bg-text dark:border-gray-600 dark:placeholder-gray-400 dark:text-Liteprimary">
+                            <option>100</option>
+                            <option>200</option>
+                            <option>300</option>
+                            <option>400</option>
+                            <option>500</option>
+                            <option>600</option>
+                            <option>700</option>
+                            <option>800</option>
+                            <option>900</option>
+                            <option>1000</option>
+                        </select>
+                        <label className="mt-6 mb-2 text-lg font-bold text-text">Возвраст</label>
+                        <label className=" mb-2 text-lg font-bold text-text">От</label>
+                        <select className="bg-gray-50 border border-gray-300 text-base rounded-lg w-full p-2.5 dark:bg-text dark:border-gray-600 dark:placeholder-gray-400 dark:text-Liteprimary">
+                            <option>15</option>
+                            <option>20</option>
+                            <option>25</option>
+                            <option>30</option>
+                            <option>35</option>
+                            <option>40</option>
+                            <option>45</option>
+                            <option>50</option>
+                            <option>55</option>
+                            <option>60</option>
+                            <option>65</option>
+                            <option>70</option>
+                            <option>75</option>
+                        </select>
+                        <label className=" mb-2 text-lg font-bold text-text">До</label>
+                        <select className="bg-gray-50 border border-gray-300 text-base rounded-lg w-full p-2.5 dark:bg-text dark:border-gray-600 dark:placeholder-gray-400 dark:text-Liteprimary">
+                            <option>15</option>
+                            <option>20</option>
+                            <option>25</option>
+                            <option>30</option>
+                            <option>35</option>
+                            <option>40</option>
+                            <option>45</option>
+                            <option>50</option>
+                            <option>55</option>
+                            <option>60</option>
+                            <option>65</option>
+                            <option>70</option>
+                            <option>75</option>
+                        </select>
                     </div>
 
                 </div>
