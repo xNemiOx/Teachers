@@ -7,11 +7,6 @@ import { usePathname } from 'next/navigation'
 
 export default function Home() {
 
-  const pathname = usePathname();
-  const session = useSession();
-
-  console.log(session);
-
   return (
     <div>
       <nav className="bg-background p-4 z-50 w-full h-20 flex">

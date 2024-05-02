@@ -1,12 +1,9 @@
 'use client'
 
-import Image from 'next/image'
 import Register from '@/components/regForm'
 import Link from 'next/link'
 
 export default function Auth() {
-
-
 
     return (
         <div className=''>

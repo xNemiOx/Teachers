@@ -1,11 +1,17 @@
 'use client'
 
+import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { signOut } from 'next-auth/react';
 
 export default function Home() {
 
+    const session = useSession()
+    console.log(session)
+
     return (
+
         <div>
             <nav className="bg-Liteprimary p-4 z-50 w-full h-20 flex">
                 <div className="container mx-auto flex justify-between items-center">
@@ -24,7 +30,7 @@ export default function Home() {
                     </div>
 
                     <div className="space-x-8">
-                        <Link href="/" className="text-text">Выйти</Link>
+                        <Link onClick={() => {signOut();}} href="/" className="text-text">Выйти</Link>
                     </div>
 
                 </div>
