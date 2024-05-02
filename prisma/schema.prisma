@@ -1,0 +1,78 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model Qualification {
+  id    Int     @id @default(autoincrement())
+  name  String
+}
+
+model Tutor_Qualification {
+  id        Int     @id @default(autoincrement())
+  tutor_id     Int
+  qualification_id   Int
+}
+
+model Tutor {
+  id    Int     @id @default(autoincrement())
+  login String  @unique
+  password  String
+  name String?
+  surname String?
+  patronymic String?
+  birth_day DateTime?
+  start_date DateTime?
+}
+
+model Raiting_reviews {
+  id        Int     @id @default(autoincrement())
+  student_id     Int
+  tutor_id    Int
+  comment String?
+  rating  Decimal?
+}
+
+model Student {
+  id    Int     @id @default(autoincrement())
+  login String  @unique
+  password  String
+  name String?
+  surname String?
+  patronymic String?
+  birth_day DateTime?
+}
+
+model Reserv {
+  id        Int     @id @default(autoincrement())
+  sheadule_id     Int
+  student_id   Int
+  lessons_date DateTime
+}
+
+enum dayofweek{
+  monday 
+  tuesday
+  wednesday
+  thursday
+  friday
+  saturday
+  sunday
+  }
+
+model Sheadule {
+  id        Int     @id @default(autoincrement())
+  tutor_id     Int
+  lessons_name   String
+  dayofweek dayofweek
+  lessons_start DateTime
+  lessons_time DateTime
+}

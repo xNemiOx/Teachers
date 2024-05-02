@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Authentific from '@/components/authForm'
 import Link from 'next/link'
 

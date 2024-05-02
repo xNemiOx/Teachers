@@ -5,8 +5,6 @@ import Link from 'next/link'
 
 export default function Register() {
 
-
-
     return (
         <main className="relative min-h-screen flex flex-col items-center justify-center p-24 bg-background">
 
