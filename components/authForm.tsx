@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { signIn } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 
 export default function AuthForm() {
     const [login, setLogin] = useState('');
@@ -10,19 +10,22 @@ export default function AuthForm() {
 
     const router=useRouter()
 
-    const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault(); // Предотвращаем стандартное поведение отправки формы
         try {
-            const response = signIn('credentials', {
+
+            const response = await signIn('credentials', {
                 login: login,
                 password: password,
+                redirect: true,
+                callbackUrl: '/Repcenter'
             })
 
             console.log(123, response)
 
             if (response?.ok) {
                 // Если аутентификация прошла успешно, перенаправляем пользователя на защищенную страницу
-                router.push('/Auth');
+                router.push('/Repcenter');
             }
         } catch (error) {
             console.error('Ошибка:', error);
