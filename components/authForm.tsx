@@ -1,10 +1,12 @@
+'use client'
+
 import { useState } from 'react';
 import Link from 'next/link';
 import { signIn } from 'next-auth/react';
-import { redirect, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export default function AuthForm() {
-    const [login, setLogin] = useState('');
+    const [email, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
@@ -15,7 +17,7 @@ export default function AuthForm() {
         try {
 
             const response = await signIn('credentials', {
-                login: login,
+                email: email,
                 password: password,
                 redirect: true,
                 callbackUrl: '/Repcenter'
@@ -26,11 +28,13 @@ export default function AuthForm() {
             if (response?.ok) {
                 // Если аутентификация прошла успешно, перенаправляем пользователя на защищенную страницу
                 router.push('/Repcenter');
+                router.refresh();
             }
         } catch (error) {
             console.error('Ошибка:', error);
             setError('Произошла ошибка при выполнении запроса');
         }
+
     };
 
     return (
@@ -42,7 +46,7 @@ export default function AuthForm() {
                     </div>
                     <form onSubmit={(e) => handleLogin(e)}>
                         <div className='pt-5 space-y-8 pb-8'>
-                            <input name='login' placeholder='Логин' value={login} onChange={(e) => setLogin(e.target.value)} className='text-background py-3 px-2 font-semibold rounded-md h-14 transition bg-text z-10 placeholder:text-background'></input>
+                            <input name='email' placeholder='Логин' value={email} onChange={(e) => setLogin(e.target.value)} className='text-background py-3 px-2 font-semibold rounded-md h-14 transition bg-text z-10 placeholder:text-background'></input>
                             <input name='password' type='password' placeholder='Пароль' value={password} onChange={(e) => setPassword(e.target.value)} className='text-background py-3 px-2 font-semibold rounded-md h-14 transition bg-text z-10 placeholder:text-background'></input>
                         </div>
                         <button type="submit" className="text-text bg-primary rounded-3xl w-52 py-3">

@@ -1,10 +1,12 @@
+'use client'
+
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 export default function Register() {
     const [role, setRole] = useState('student'); // Установите начальное значение роли на "ученик"
-    const [login, setLogin] = useState('');
+    const [email, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [correctPassword, setCorrectPassword] = useState('');
     const [error, setError] = useState('');
@@ -23,25 +25,29 @@ export default function Register() {
             const response = await fetch(`/api/auth/register`, {
                 method: 'POST',
                 body: JSON.stringify({
-                    login: login,
+                    email: email,
                     password: password,
                     role: role // Передаем значение роли
                 }),
             });
-    
+        
             console.log('Status:', response.status);
-    
-            if (response?.ok) {
+        
+            if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+                setError('Неверный формат адреса электронной почты');
+            }
+            else if (response?.ok) {
                 router.push('/Auth');
             } else {
                 const data = await response.json();
                 console.error('Ошибка:', data);
-                setError('Такой пользователь уже сущетсвует');
+                setError('Такой пользователь уже существует');
             }
         } catch (error) {
             console.error('Ошибка при отправке запроса:', error);
             setError('Произошла ошибка при регистрации');
         }
+
     }
     
     
@@ -55,7 +61,7 @@ export default function Register() {
                     </div>
                     <form onSubmit={handleSubmit}>
                         <div className="pt-5 space-y-8 pb-8">
-                            <input name='login' placeholder='Логин' value={login} onChange={(e) => setLogin(e.target.value)} className='text-background py-3 px-2 font-semibold rounded-md h-14 transition bg-text z-10 placeholder:text-background'></input>
+                            <input name='email' placeholder='Электронная почта' value={email} onChange={(e) => setLogin(e.target.value)} className='text-background py-3 px-2 font-semibold rounded-md h-14 transition bg-text z-10 placeholder:text-background'></input>
                             <input name='password' type='password' placeholder='Пароль' value={password} onChange={(e) => setPassword(e.target.value)} className='text-background py-3 px-2 font-semibold rounded-md h-14 transition bg-text z-10 placeholder:text-background'></input>
                             <input name='correctPassword' type='password' placeholder='Подтверждение пароля' value={correctPassword} onChange={(e) => setCorrectPassword(e.target.value)} className='text-background py-3 px-2 font-semibold rounded-md h-14 transition bg-text z-10 placeholder:text-background'></input>
                             <div className="flex justify-between w-72 pl-8">

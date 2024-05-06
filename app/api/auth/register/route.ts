@@ -6,8 +6,8 @@ const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
   try {
-    const { login, password, role } = await request.json();
-    console.log({ login, password, role });
+    const { email: email, password, role } = await request.json();
+    console.log({ email: email, password, role });
 
     const hashedPassword = await hash(password, 10);
 
@@ -15,14 +15,14 @@ export async function POST(request: Request) {
     if (role === 'student') {
       newUser = await prisma.student.create({
         data: {
-          login: login,
+          login: email,
           password: hashedPassword
         }
       });
     } else if (role === 'tutor') {
       newUser = await prisma.tutor.create({
         data: {
-          login: login,
+          login: email,
           password: hashedPassword
         }
       });

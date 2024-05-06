@@ -8,12 +8,12 @@ import { compare } from 'bcrypt';
 
 const prisma = new PrismaClient();
 
-async function checkPassword(login: string, password: string) {
+async function checkPassword(email: string, password: string) {
     try {
         // Получаем данные пользователя из базы данных
         const tutor = await prisma.tutor.findUnique({
             where: {
-                login: login,
+                login: email,
             },
         });
 
@@ -43,53 +43,17 @@ async function checkPassword(login: string, password: string) {
 
 export const authOptions: NextAuthOptions = {
     providers: [
-        // CredentialsProvider({
-        //     name: "credentials",
-
-        //     credentials: {
-        //         login: { label: "Login", type: "text", required: true },
-        //         password: { label: "Password", type: "password", required: true },
-        //     },
-
-        //     async authorize(credentials, req) {
-        //         if (!credentials?.login || !credentials?.password) return null;
-
-        //         try {
-
-        //             console.log(123)
-
-        //             // Проверяем правильность пароля и логина
-        //             const tutor = await checkPassword(credentials.login, credentials.password);
-
-        //             if (tutor) {
-        //                 // Если пароль совпадает, возвращаем пользователя
-        //                 return {
-        //                     id: tutor.id, // Замените на реальный идентификатор пользователя
-        //                     login: credentials.login,
-        //                     // Здесь можете добавить другие данные пользователя, если необходимо
-        //                 };
-        //             } else {
-        //                 // Если пароль не совпадает, возвращаем null
-        //                 return null;
-        //             }
-        //         } catch (error) {
-        //             console.error('Error while authorizing:', error);
-        //             return null;
-        //         }
-        //     },
-        // }),
-
 
         CredentialsProvider({
             name: 'Credentials',
             credentials: {
-                login: { type: 'text' },
+                login: { type: 'email' },
                 password: { type: 'password' },
             },
     
             async authorize(credentials): Promise<any> {
-                const { login, password } = credentials as any
-                const tutor = await checkPassword(login, password);
+                const { email, password } = credentials as any
+                const tutor = await checkPassword(email, password);
                 if (tutor) {
                     const { password, ...res } = tutor
                     console.log(tutor)
@@ -103,6 +67,9 @@ export const authOptions: NextAuthOptions = {
 
     ],
 
+    session:{strategy:
+        'jwt'
+    },
 
     adapter: PrismaAdapter(prisma as any),
 

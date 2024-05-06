@@ -2,8 +2,10 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { signOut } from 'next-auth/react';
 
 export default function Home() {
+
 
     return (
         <div>
@@ -23,7 +25,7 @@ export default function Home() {
                     </div>
 
                     <div className="space-x-8">
-                        <Link href="/" className="text-text">Выйти</Link>
+                        <button onClick={() => signOut()} className="text-text">Выйти</button>
                     </div>
 
                 </div>

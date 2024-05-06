@@ -1,9 +1,14 @@
-'use client'
-
 import Register from '@/components/regForm'
 import Link from 'next/link'
+import { getServerSession } from 'next-auth'
+import { redirect } from 'next/navigation';
 
-export default function Auth() {
+export default async function Auth() {
+
+    const session = await getServerSession();
+    if (session?.user) {
+        redirect('/Repcenter');
+    }
 
     return (
         <div className=''>
