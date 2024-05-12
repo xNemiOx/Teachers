@@ -9,7 +9,6 @@ import { useSession } from 'next-auth/react';
 export default function Home() {
 
     const session = useSession();
-    console.log(session)
     if (!session?.data) {
         redirect('/');
     }
@@ -239,7 +238,7 @@ export default function Home() {
                             <option>900</option>
                             <option>1000</option>
                         </select>
-                        <label className="mt-6 mb-2 text-lg font-bold text-text">Возвраст</label>
+                        <label className="mt-6 mb-2 text-lg font-bold text-text">Возраст</label>
                         <label className=" mb-2 text-lg font-bold text-text">От</label>
                         <select className="bg-gray-50 border border-gray-300 text-base rounded-lg w-full p-2.5 dark:bg-text dark:border-gray-600 dark:placeholder-gray-400 dark:text-Liteprimary">
                             <option>15</option>

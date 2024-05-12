@@ -12,29 +12,56 @@ datasource db {
 }
 
 model Qualification {
-  id    Int     @id @default(autoincrement())
+  id    String     @id @default(cuid())
   name  String
 }
 
 model Tutor_Qualification {
-  id        Int     @id @default(autoincrement())
+  id    String     @id @default(cuid())
   tutor_id     Int
   qualification_id   Int
 }
 
-model Tutor {
-  id    Int     @id @default(autoincrement())
-  login String  @unique
+model user {
+  id    String     @id @default(cuid())
+  email String  @unique
   password  String
   name String?
   surname String?
   patronymic String?
+  location String?
   birth_day DateTime?
+  gender gender?
+  role role
+  tutor Tutor? 
+  student Student?
+}
+
+  enum gender{
+  // Мужской пол
+  male
+  // Женский пол
+  female
+  }
+
+  enum role{
+    tutor
+    student
+  }
+
+model Tutor {
+  id    String     @id @default(cuid())
+  userid String @unique
   start_date DateTime?
+  cost Int?
+  about_me String?
+  lessons String?
+  for_whom String?
+  user user @relation(fields: [userid], references: [id])
 }
 
 model Raiting_reviews {
-  id        Int     @id @default(autoincrement())
+  id    String     @id @default(cuid())
   student_id     Int
   tutor_id    Int
   comment String?
@@ -42,20 +69,25 @@ model Raiting_reviews {
 }
 
 model Student {
-  id    Int     @id @default(autoincrement())
-  login String  @unique
-  password  String
-  name String?
-  surname String?
-  patronymic String?
-  birth_day DateTime?
+  id    String     @id @default(cuid())
+  userid String @unique
+  user     user    @relation(fields: [userid], references: [id])
 }
 
 model Reserv {
-  id        Int     @id @default(autoincrement())
+  id    String     @id @default(cuid())
   sheadule_id     Int
   student_id   Int
   lessons_date DateTime
+}
+
+model Sheadule {
+  id    String     @id @default(cuid())
+  tutor_id     Int
+  lessons_name   String
+  dayofweek dayofweek
+  lessons_start DateTime
+  lessons_time DateTime
 }
 
 enum dayofweek{
@@ -67,12 +99,3 @@ enum dayofweek{
   saturday
   sunday
   }
-
-model Sheadule {
-  id        Int     @id @default(autoincrement())
-  tutor_id     Int
-  lessons_name   String
-  dayofweek dayofweek
-  lessons_start DateTime
-  lessons_time DateTime
-}

@@ -6,31 +6,19 @@ const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
   try {
-    const { email: email, password, role } = await request.json();
-    console.log({ email: email, password, role });
+    const {email, password, role } = await request.json();
 
     const hashedPassword = await hash(password, 10);
 
-    let newUser;
-    if (role === 'student') {
-      newUser = await prisma.student.create({
-        data: {
-          login: email,
-          password: hashedPassword
-        }
-      });
-    } else if (role === 'tutor') {
-      newUser = await prisma.tutor.create({
-        data: {
-          login: email,
-          password: hashedPassword
-        }
-      });
-    } else {
-      throw new Error('Invalid role');
-    }
+    const user = await prisma.user.create({
+      data: {
+        role,
+        email,
+        password: hashedPassword
+      }
+    })
 
-    console.log("New user created:", newUser);
+    console.log(user)
 
   } catch (e) {
     console.error("Error creating user:", e);

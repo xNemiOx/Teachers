@@ -1,10 +1,13 @@
 'use client'
 
-import { useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
+
+  const session = useSession();
+  console.log(session)
 
   return (
     <div>
@@ -19,8 +22,8 @@ export default function Home() {
           <Link href="/" className="text-text font-bold text-lg ml-2">Развитие</Link>
 
           <div className="space-x-8">
-            <Link href="#" className="text-text">Репетиторам</Link>
-            <Link href="#" className="text-text">Обучающимся</Link>
+            <Link href="/Auth" className="text-text">Репетиторам</Link>
+            <Link href="/Auth" className="text-text">Обучающимся</Link>
             <Link href="/Repcenter" className="text-text">Предметы</Link>
           </div>
 
