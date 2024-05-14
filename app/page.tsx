@@ -1,13 +1,10 @@
-'use client'
-
-import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { getServerSession } from 'next-auth'
+import { redirect } from 'next/navigation';
 
 export default function Home() {
 
-  const session = useSession();
-  console.log(session)
 
   return (
     <div>

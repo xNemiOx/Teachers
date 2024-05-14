@@ -53,14 +53,14 @@ export default async function TutorForm({ userid }: { userid: string }) {
                             />
                             <p className='text-3xl text-secondary font-bold pb-3 ml-48'>Имя: </p>
                             <p className='text-xl text-background font-bold pb-2 ml-48'>Местоположение: </p>
-                            <p className='text-xl text-background font-bold pb-4 ml-48'>Возраст: </p>
-                            <p className='text-xl text-background font-bold pb-2'><span className='text-secondary'>Пол:</span> </p>
+                            <p className='text-xl text-background font-bold pb-2 ml-48'>Возраст: </p>
+                            <p className='text-xl text-background font-bold pb-12 ml-48'>Пол: </p>
 
-                            <p className='text-xl text-background font-bold pb-4 ml-48'>Опыт: </p>
-                            <p className='text-xl text-background font-bold pb-4 ml-48'>Цена услуги (45 минут): </p>
-                            <p className='text-xl text-background font-bold pb-2 pt-4'><span className='text-secondary'>О себе:</span> </p>
-                            <p className='text-xl text-background font-bold pb-2'><span className='text-secondary'>Предметы:</span> </p>
-                            <p className='text-xl text-background font-bold pb-2'><span className='text-secondary'>Кому:</span> </p>
+                            <p className='text-xl text-background font-bold pb-3'><span className='text-secondary'>Опыт: </span> </p>
+                            <p className='text-xl text-background font-bold pb-3'><span className='text-secondary'>Цена услуги (45 минут): </span> </p>
+                            <p className='text-xl text-background font-bold pb-3'><span className='text-secondary'>О себе: </span> </p>
+                            <p className='text-xl text-background font-bold pb-3'><span className='text-secondary'>Предметы: </span> </p>
+                            <p className='text-xl text-background font-bold pb-3'><span className='text-secondary'>Кому: </span> </p>
 
 
                         </div>
@@ -68,6 +68,7 @@ export default async function TutorForm({ userid }: { userid: string }) {
 
                     <div className='absolute h-full w-full bg-background'></div>
                     <button type="submit">Сохранить</button>
+                    <Link href="/Reg" className="text-background font-bold text-base bg-text  border-white rounded-full py-6 px-10 mt-12 z-50">Отзывы  ↓</Link>
                 </main>
             </form>
         </div>

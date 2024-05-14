@@ -4,11 +4,11 @@ import StudentForm from '@/app/Me/student'
 import TutorForm from '@/app/Me/tutor'
 import UserForm from '@/app/Me/user'
 import { notFound } from 'next/navigation';
-import { redirect } from 'next/navigation';
+import Link from 'next/link'
 
 const prisma = new PrismaClient();
 
-export default async function Me({userid}: {userid :string}) {
+export default async function Me({ userid }: { userid: string }) {
 
   const session = await getServerSession();
 
@@ -23,19 +23,22 @@ export default async function Me({userid}: {userid :string}) {
   console.log(user.role)
 
   return (
+    <div>
       <div className=''>
         {user.role === 'tutor' && (
           <>
-            <TutorForm userid= {user.id}/>
+            <TutorForm userid={user.id} />
           </>
         )}
         {user.role === 'student' && (
           <>
-            <StudentForm userid= {user.id}/>
+            <StudentForm userid={user.id} />
           </>
         )}
       </div>
+    </div>
+
   )
-  
+
 }
 
