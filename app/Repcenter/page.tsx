@@ -181,6 +181,9 @@ export default function Home() {
                             <option>Новосибирск</option>
                             <option>Калтан</option>
                             <option>Томск</option>
+                            <option>Луганск</option>
+                            <option>Донецк</option>
+                            <option>Севастополь</option>
                         </select>
                         <label className=" mb-2 text-lg font-bold text-text">Предмет</label>
                         <select className="bg-gray-50 border border-gray-300 text-base rounded-lg w-full p-2.5 dark:bg-text dark:border-gray-600 dark:placeholder-gray-400 dark:text-Liteprimary">

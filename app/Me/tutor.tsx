@@ -20,6 +20,12 @@ export default async function TutorForm({ userid }: { userid: string }) {
 
     };
 
+    // Фиктивные данные для оценок
+    const ratings = {
+        average: 3.5, // Средняя оценка
+        total: 4 // Общее количество оценивших
+    };
+
     return (
         <div>
             <form>
@@ -51,25 +57,32 @@ export default async function TutorForm({ userid }: { userid: string }) {
                                 width={220}
                                 height={220}
                             />
-                            <p className='text-3xl text-secondary font-bold pb-3 ml-48'>Имя: </p>
-                            <p className='text-xl text-background font-bold pb-2 ml-48'>Местоположение: </p>
-                            <p className='text-xl text-background font-bold pb-2 ml-48'>Возраст: </p>
-                            <p className='text-xl text-background font-bold pb-12 ml-48'>Пол: </p>
+                            <p className='text-3xl text-secondary font-bold pb-3 ml-48'>Имя: Хорошев Сергей Сергеевич</p>
+                            <p className='text-xl text-background font-bold pb-2 ml-48'>Местоположение: Новокузнецк, Заводской р-н</p>
+                            <p className='text-xl text-background font-bold pb-2 ml-48'>Возраст: 31</p>
+                            <p className='text-xl text-background font-bold pb-12 ml-48'>Пол: мужской</p>
 
-                            <p className='text-xl text-background font-bold pb-3'><span className='text-secondary'>Опыт: </span> </p>
-                            <p className='text-xl text-background font-bold pb-3'><span className='text-secondary'>Цена услуги (45 минут): </span> </p>
-                            <p className='text-xl text-background font-bold pb-3'><span className='text-secondary'>О себе: </span> </p>
-                            <p className='text-xl text-background font-bold pb-3'><span className='text-secondary'>Предметы: </span> </p>
-                            <p className='text-xl text-background font-bold pb-3'><span className='text-secondary'>Кому: </span> </p>
+                            <div className="flex items-center ml-96 pb-3 mt-1 absolute">
+                                <p className="text-xl text-background font-bold mr-2 ml-96"><span className='text-secondary'>Оценка:</span></p>
+                                <div className="flex">
+                                </div>
+                                <p className="text-xl text-background font-bold ml-2"><span className='text-yellow'>{ratings.average.toFixed(1)}</span> ({ratings.total} оценок)</p>
+                            </div>
 
-
+                            <p className='text-xl text-background font-bold pb-3'><span className='text-secondary'>Опыт: </span>31</p>
+                            <p className='text-xl text-background font-bold pb-3'><span className='text-secondary'>Цена услуги (45 минут): </span>500 руб </p>
+                            <p className='text-xl text-background font-bold pb-3'><span className='text-secondary'>О себе: </span> 5 лет работаю в школе учителем географии, помогу со сдачей экзамена. Также помогу понять сложные темы.</p>
+                            <p className='text-xl text-background font-bold pb-3'><span className='text-secondary'>Предметы: </span> Русский, литература</p>
+                            <p className='text-xl text-background font-bold pb-3'><span className='text-secondary'>Кому: </span> 1-4 класс</p>
                         </div>
                     </div>
 
                     <div className='absolute h-full w-full bg-background'></div>
                     <button type="submit">Сохранить</button>
-                    <Link href="/Reg" className="text-background font-bold text-base bg-text  border-white rounded-full py-6 px-10 mt-12 z-50">Отзывы  ↓</Link>
+                    <Link href="/Reg" className="text-background font-bold text-base bg-text border-white rounded-full py-6 px-10 mt-12 z-50 mb-48">Отзывы  ↓</Link>
+
                 </main>
+
             </form>
         </div>
     )

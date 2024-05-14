@@ -15,6 +15,7 @@ const config: Config = {
         'Liteprimary': '#3d2435',
         'secondary': '#8b236d',
         'accent': '#d942ae',
+        'yellow': '#ff8b00',
        },
 
       backgroundImage: {
