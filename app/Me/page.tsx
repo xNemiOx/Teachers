@@ -33,7 +33,7 @@ export default async function Me({ userid }: { userid: string }) {
       <div className=''>
         {user.role === 'tutor' && (
           <>
-            <TutorForm userid={user.id} />
+            <TutorForm/>
           </>
         )}
         {user.role === 'student' && (
@@ -42,7 +42,7 @@ export default async function Me({ userid }: { userid: string }) {
           </>
         )}
 
-        <main className='relative flex h-screen flex-col items-center justify-star'>
+        {/* <main className='relative flex h-screen flex-col items-center justify-star'>
 
           <div className='w-2/3 h-full z-50 rounded-3xl flex flex-col space-y-6'>
             <Link href="/Me" className='w-full h-auto z-50 rounded-3xl bg-text flex flex-row justify-between p-5'>
@@ -153,7 +153,7 @@ export default async function Me({ userid }: { userid: string }) {
 
           <div className='absolute h-full w-full bg-background'></div>
 
-        </main>
+        </main> */}
 
       </div>
     </div>

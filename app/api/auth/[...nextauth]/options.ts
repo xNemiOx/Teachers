@@ -9,10 +9,11 @@ import type { User } from 'next-auth/';
 
 const prisma = new PrismaClient();
 
-async function checkPassword(email: string, password: string) {
+async function checkPassword(phone: string, email: string, password: string) {
     try {
         const user = await prisma.user.findUnique({
             where: {
+                phone,
                 email,
             },
         });
@@ -46,6 +47,7 @@ export const authOptions: NextAuthOptions = {
         CredentialsProvider({
             name: 'Credentials',
             credentials: {
+                phone: { label: 'Phone', type: 'text' },
                 email: { label: 'Email', type: 'email' },
                 password: { label: 'Password', type: 'password' },
             },

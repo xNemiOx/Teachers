@@ -11,105 +11,10 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-model Qualification {
-  id    String     @id @default(cuid())
-  name  String
-  tutor_Qual Tutor_Qualification?
-}
-
-model Tutor_Qualification {
-  id    String     @id @default(cuid())
-  tutor_id     String @unique
-  qualification_id   String @unique
-  tutor Tutor @relation(fields: [tutor_id], references: [id])
-  qual Qualification @relation(fields: [qualification_id], references: [id])
-}
-
 model user {
   id    String     @id @default(cuid())
+  phone String @unique
   email String  @unique
   password  String
-  name String?
-  surname String?
-  patronymic String?
-  location String?
-  birth_day DateTime?
-  about_me String?
-  gender gender?
-  role role
-  tutor Tutor? 
-  student Student?
+  name String
 }
-
-  enum gender{
-  // Мужской пол
-  male
-  // Женский пол
-  female
-  }
-
-  enum role{
-    tutor
-    student
-  }
-
-model Tutor {
-  id    String     @id @default(cuid())
-  userid String @unique
-  start_date DateTime?
-  cost Int?
-  lessons String?
-  for_whom String?
-  user user @relation(fields: [userid], references: [id])
-  rait_rev Raiting_reviews?
-  tutor_qual Tutor_Qualification?
-  sheadule Sheadule?
-}
-
-model Raiting_reviews {
-  id    String     @id @default(cuid())
-  student_id     String @unique
-  tutor_id    String @unique
-  comment String?
-  rating  Decimal?
-  tutor Tutor @relation(fields: [tutor_id], references: [id])
-  student Student @relation(fields: [student_id], references: [id])
-}
-
-model Student {
-  id    String     @id @default(cuid())
-  userid String @unique
-  user     user    @relation(fields: [userid], references: [id])
-  rait_rev Raiting_reviews?
-  reserv Reserv?
-}
-
-model Reserv {
-  id    String     @id @default(cuid())
-  sheadule_id     String @unique
-  student_id   String @unique
-  lessons_date DateTime
-  student Student @relation(fields: [student_id], references: [id])
-  sheadule Sheadule @relation(fields: [sheadule_id], references: [id])
-}
-
-model Sheadule {
-  id    String     @id @default(cuid())
-  tutor_id     String @unique
-  lessons_name   String
-  dayofweek dayofweek
-  lessons_start DateTime
-  lessons_time DateTime
-  reserv Reserv?
-  tutor Tutor @relation(fields: [tutor_id], references: [id])
-}
-
-enum dayofweek{
-  monday 
-  tuesday
-  wednesday
-  thursday
-  friday
-  saturday
-  sunday
-  } 
